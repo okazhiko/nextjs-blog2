@@ -4,6 +4,7 @@ import Date from '../components/date';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
+import Calc from './calc';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -37,6 +38,10 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      </section>
+      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+        <h2 className={utilStyles.headingLg}>Calculator</h2>
+        <Calc />
       </section>
     </Layout>
   );
